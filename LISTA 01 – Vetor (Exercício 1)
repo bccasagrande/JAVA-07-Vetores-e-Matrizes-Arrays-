@@ -1,37 +1,27 @@
-algoritmo "buscar_no_vetor"
+programa
+{
+    funcao inicio()
+    {
+        inteiro vetor[10] = {2,5,1,3,4,9,7,8,10,6}
+        inteiro numero
+        inteiro i
+        logico encontrado = falso
 
-var
-   vetor: vetor[10] de inteiro
-   numero, i: inteiro
-   encontrado: logico
+        escreva("Digite o número que você deseja encontrar: ")
+        leia(numero)
 
-inicio
+        para(i = 0; i < 10; i++)
+        {
+            se(vetor[i] == numero)
+            {
+                escreva("\nO número ", numero, " está localizado na posição: ", i)
+                encontrado = verdadeiro
+            }
+        }
 
-   vetor[0] <- 2
-   vetor[1] <- 5
-   vetor[2] <- 1
-   vetor[3] <- 3
-   vetor[4] <- 4
-   vetor[5] <- 9
-   vetor[6] <- 7
-   vetor[7] <- 8
-   vetor[8] <- 10
-   vetor[9] <- 6
-
-   escreva("Digite o número que você deseja encontrar: ")
-   leia(numero)
-
-   encontrado <- falso
-
-   para i de 0 ate 9 faca
-      se vetor[i] = numero entao
-         escreval("O número ", numero, " está localizado na posição: ", i)
-         encontrado <- verdadeiro
-      fimse
-   fimpara
-
-   se encontrado = falso entao
-      escreval("O número ", numero, " não foi encontrado!")
-   fimse
-
-fimalgoritmo
+        se(encontrado == falso)
+        {
+            escreva("\nO número ", numero, " não foi encontrado!")
+        }
+    }
+}
