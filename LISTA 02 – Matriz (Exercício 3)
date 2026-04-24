@@ -1,37 +1,36 @@
-algoritmo "matriz_diagonais"
+programa
+{
+    funcao inicio()
+    {
+        inteiro matriz[3][3]
+        inteiro i, j
+        inteiro somaPrincipal = 0
+        inteiro somaSecundaria = 0
 
-var
-   matriz: vetor[3,3] de inteiro
-   i, j: inteiro
-   somaPrincipal, somaSecundaria: inteiro
+        para(i = 0; i < 3; i++)
+        {
+            para(j = 0; j < 3; j++)
+            {
+                escreva("Digite o valor para [", i, "][", j, "]: ")
+                leia(matriz[i][j])
+            }
+        }
 
-inicio
+        escreva("\nElementos da Diagonal Principal:\n")
+        para(i = 0; i < 3; i++)
+        {
+            escreva(matriz[i][i], " ")
+            somaPrincipal = somaPrincipal + matriz[i][i]
+        }
 
-   somaPrincipal <- 0
-   somaSecundaria <- 0
+        escreva("\n\nElementos da Diagonal Secundária:\n")
+        para(i = 0; i < 3; i++)
+        {
+            escreva(matriz[i][2 - i], " ")
+            somaSecundaria = somaSecundaria + matriz[i][2 - i]
+        }
 
-   para i de 0 ate 2 faca
-      para j de 0 ate 2 faca
-         escreva("Digite o valor para [", i, "][", j, "]: ")
-         leia(matriz[i,j])
-      fimpara
-   fimpara
-
-   escreval("Elementos da Diagonal Principal:")
-   para i de 0 ate 2 faca
-      escreva(matriz[i,i], " ")
-      somaPrincipal <- somaPrincipal + matriz[i,i]
-   fimpara
-
-   escreval("")
-   escreval("Elementos da Diagonal Secundária:")
-   para i de 0 ate 2 faca
-      escreva(matriz[i,2-i], " ")
-      somaSecundaria <- somaSecundaria + matriz[i,2-i]
-   fimpara
-
-   escreval("")
-   escreval("Soma da Diagonal Principal: ", somaPrincipal)
-   escreval("Soma da Diagonal Secundária: ", somaSecundaria)
-
-fimalgoritmo
+        escreva("\n\nSoma da Diagonal Principal: ", somaPrincipal)
+        escreva("\nSoma da Diagonal Secundária: ", somaSecundaria)
+    }
+}
