@@ -1,0 +1,37 @@
+algoritmo "matriz_diagonais"
+
+var
+   matriz: vetor[3,3] de inteiro
+   i, j: inteiro
+   somaPrincipal, somaSecundaria: inteiro
+
+inicio
+
+   somaPrincipal <- 0
+   somaSecundaria <- 0
+
+   para i de 0 ate 2 faca
+      para j de 0 ate 2 faca
+         escreva("Digite o valor para [", i, "][", j, "]: ")
+         leia(matriz[i,j])
+      fimpara
+   fimpara
+
+   escreval("Elementos da Diagonal Principal:")
+   para i de 0 ate 2 faca
+      escreva(matriz[i,i], " ")
+      somaPrincipal <- somaPrincipal + matriz[i,i]
+   fimpara
+
+   escreval("")
+   escreval("Elementos da Diagonal Secundária:")
+   para i de 0 ate 2 faca
+      escreva(matriz[i,2-i], " ")
+      somaSecundaria <- somaSecundaria + matriz[i,2-i]
+   fimpara
+
+   escreval("")
+   escreval("Soma da Diagonal Principal: ", somaPrincipal)
+   escreval("Soma da Diagonal Secundária: ", somaSecundaria)
+
+fimalgoritmo
